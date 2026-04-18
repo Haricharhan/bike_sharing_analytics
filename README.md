@@ -8,9 +8,10 @@ The goal is to transform raw data into meaningful insights using SQL and visuali
 
 ## 🎯 Objective
 - Understand rider demand patterns across time
+- find out Key Performance Metrics (KPI)
 - Analyze seasonal impact on bike usage
 - Identify peak hours and high-revenue periods
-- Compare registered vs casual users
+- Rider Demographics : Compare registered vs casual users
 
 ---
 
@@ -40,7 +41,7 @@ The following steps were performed using SQL:
 - Combined multiple datasets using UNION
 - Created calculated columns:
   - Revenue = riders × price
-  - Profit = revenue − COGS
+  - Profit = riders * (revenue −  COGS)
 
 ---
 
@@ -71,43 +72,66 @@ ON a.yr = c.yr;
 ```
 
 ## Dashboard Features
-📈 KPI Cards showing total riders, revenue, and profit
-🔥 Heatmap representing hourly demand across weekdays
-📅 Time-series trend analysis for key metrics
-🌦️ Seasonal revenue comparison
-👥 Rider demographic distribution (casual vs registered)
-🎯 Highlighted key insight section
+
+  📈 KPI Cards showing total Riders, Revenue, and Profit
+  🔥 Heatmap representing hourly demand across weekdays
+  📅 Time-series trend analysis for key performance metrics(KPI)
+  🌦️ Seasonal revenue comparison across  4 seasons : Monsoon , Autumn , Summer and Winter 
+  👥 Rider demographic distribution (casual vs registered)
+  🎯 Highlighted key insight section
 
 ##💡 Key Insights
-  Peak demand occurs during evening hours (5 PM – 7 PM)
-  Monsoon season shows highest revenue generation
-  Registered users contribute majority of rides (~81%)
-  Weekends show different demand patterns compared to weekdays
+  - Both average revenue and profit increased from 2021 to 2022 
+  - Peak demand occurs during morning(8-9am) evening hours ( 5– 7 PM)
+  - Monsoon season shows highest revenue generation
+  - Registered users contribute majority of rides (~81%)
+  - Weekends show different demand patterns compared to weekdays
+
 
 🖼️ Dashboard Preview
+<p align="center">
+  <img src="Dashboard/2021.png" width= 45% alt="2021 Metrics"/>
+  <img src="Dashboard/2022.png" width="45%" alt="2022 Metrics"/>
+  <p align="center"><b>Year-wise Metrics (2021 vs 2022)</b></p>
+  <p align="center">
+    <img src="Dashboard/Over_All%20View.png" width="60%" alt="Whole Dashboard " align="center"/>
+  </p>
+  <p align="center"><b>Combined View of Both Years</b></p>
+</p>
 
+## 📁 Project Structure
 
-📁 Project Structure
-bike_sharing_analytics/
+```
+bike-sharing-analytics/
 │
 ├── Dashboard/
-│   └── dashboard.pbix
-├── Datasets/
-│   └── dataset.csv
-├── Sql/
-│   └── queries.sql
-├── images/
-│   └── dashboard.png
-├── README.md
+│   └── bike_share_bi_dashboard.pbix        # Power BI dashboard file
+│   └── 2021.png
+│   └── 2022.png
+│   └── Over_All View.png
+│
+├── Datasets
+│   ├── bike_share_yr_0.csv               # 2021 dataset
+│   ├── bike_share_yr_1.csv               # 2022 dataset
+│   └── cost_table.csv                   # Cost & pricing data
+│
+├── Requirements /
+│   └── Client-Requirements.png
+├── sql/
+│   └── Query.sql
+│   └── SQL.txt
+│
+└── README.md                            # Project documentation
+```
 
-▶️ How to Use
-Download the .pbix file
-Open in Power BI Desktop
-Load dataset if required
-Interact with filters (Year, Season, Rider Type)
+
+## ▶️ How to Use Download the .pbix file
+  - Open in Power BI Desktop
+  - Load dataset if required
+  - Interact with filters (Year, Season, Rider Type)
 
 
-📌 Future Improvements
-Add forecasting using time series analysis
-Implement dynamic tooltips
-Enhance UI with advanced interactions
+## 📌 Future Improvements
+  - Add forecasting using time series analysis
+  - Implement dynamic tooltips
+  - Enhance UI with advanced interactions
